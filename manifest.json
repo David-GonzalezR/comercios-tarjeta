@@ -1,0 +1,17 @@
+{
+  "name": "BurgerStreet — Comida de Otro Nivel",
+  "short_name": "BurgerStreet",
+  "description": "Hamburguesas gourmet, combos irresistibles y más. ¡Pide ahora!",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0a06",
+  "theme_color": "#0d0a06",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "sizes": "192x192 512x512 any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

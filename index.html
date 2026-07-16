@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>BurgerStreet — Comida de Otro Nivel</title>
+<meta name="description" content="BurgerStreet: hamburguesas gourmet, combos irresistibles y más. Pide por WhatsApp o visítanos. ¡Envío a domicilio!" />
+<meta name="theme-color" content="#0d0a06" />
+<link rel="manifest" href="./manifest.json" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="card">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-photo">
+          <img src="./logo.png" alt="BurgerStreet Logo" />
+          <span class="verified" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <div class="hero-info">
+          <h1>🍔 BurgerStreet</h1>
+          <p class="role">Hamburguesas Gourmet & Combos</p>
+          <p class="firm">Desde 2019 · Bogotá, Colombia</p>
+        </div>
+      </div>
+      <p class="tagline">Sabores que enamoran, ingredientes que nunca mienten. Tu hamburguesa perfecta te espera.</p>
+      <div class="hero-curve" aria-hidden="true"></div>
+    </header>
+
+    <!-- Botones de acción -->
+    <section class="actions">
+      <!-- WhatsApp -->
+      <a class="action" id="btn-whatsapp" href="">
+        <span class="action-icon whatsapp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 21l2-5.5A8.38 8.38 0 0 1 4 11.5a8.5 8.5 0 0 1 17 0z"/></svg>
+        </span>
+        <span class="action-text">
+          <span class="action-title">Pedir por WhatsApp</span>
+          <span class="action-sub whatsapp-number">+57 315 634 9313</span>
+        </span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Menú digital -->
+      <a class="action" id="btn-menu" href="./menu.html">
+        <span class="action-icon menu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="7" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="action-text">
+          <span class="action-title">Ver Menú</span>
+          <span class="action-sub">Hamburguesas, combos y más</span>
+        </span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Llamar -->
+      <a class="action" id="btn-call" href="tel:+573001234567">
+        <span class="action-icon call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="action-text">
+          <span class="action-title">Llamar</span>
+          <span class="action-sub">+57 300 123 4567</span>
+        </span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Ubicación -->
+      <a class="action" id="btn-location" href="https://www.google.com/maps/search/?api=1&query=Carrera+7+123+45+Bogota" target="_blank" rel="noopener">
+        <span class="action-icon location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="action-text">
+          <span class="action-title">Cómo llegar</span>
+          <span class="action-sub">Carrera 7 #123-45, Bogotá</span>
+        </span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Contacto / Sugerencias -->
+      <a class="action" id="btn-contact" href="./contacto.html">
+        <span class="action-icon form">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </span>
+        <span class="action-text">
+          <span class="action-title">Contáctanos</span>
+          <span class="action-sub">Sugerencias o quejas</span>
+        </span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+      <!-- Horarios -->
+      <a class="action" id="btn-horarios" href="./horarios.html">
+        <span class="action-icon appointment">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </span>
+        <span class="action-text">
+          <span class="action-title">Horarios</span>
+          <span class="action-sub">Lun–Dom · 11am – 11pm</span>
+        </span>
+        <span class="chev" aria-hidden="true">›</span>
+      </a>
+
+
+    </section>
+
+    <!-- Redes sociales -->
+    <section class="social">
+      <h2 class="social-title">Síguenos 🔥</h2>
+      <div class="social-row">
+        <a class="soc soc-ig" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="soc soc-fb" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a class="soc soc-tk" href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+        </a>
+        <a class="soc soc-yt" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="soc soc-web" href="https://burgerstreet.co" target="_blank" rel="noopener" aria-label="Sitio web">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        </a>
+      </div>
+      <p class="web">burgerstreet.co</p>
+    </section>
+
+    <div class="footer-spacer"></div>
+  </main>
+
+  <!-- Dock inferior -->
+  <nav class="dock" aria-label="Acciones rápidas">
+    <button class="dock-btn" id="saveContact" type="button">
+      <span class="dock-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+      </span>
+      <span>Guardar</span>
+    </button>
+    <button class="dock-btn" id="installAppBtn" type="button">
+      <span class="dock-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </span>
+      <span>Instalar App</span>
+    </button>
+    <button class="dock-btn" id="shareCard" type="button">
+      <span class="dock-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </span>
+      <span>Compartir</span>
+    </button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- iOS Install Modal -->
+  <div id="iosInstallModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="modal-title">Cómo instalar en tu iPhone</h2>
+      <ol class="modal-steps">
+        <li>Toca el ícono de <strong>Compartir</strong> <svg style="display:inline; width:16px; height:16px; vertical-align:text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> en la barra inferior.</li>
+        <li>Selecciona <strong>Agregar a la pantalla de inicio</strong> <svg style="display:inline; width:16px; height:16px; vertical-align:text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>.</li>
+      </ol>
+      <button class="modal-close" id="closeIosInstall" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- VCard Fallback Modal -->
+  <div id="vcardFallbackModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="modal-title">No se pudo guardar automáticamente</h2>
+      <p class="modal-text">Parece que tu navegador no permite descargar el contacto directamente. Puedes copiar los datos para agregarlos manualmente.</p>
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <button class="modal-primary" id="copyVCardData" type="button">Copiar datos</button>
+        <button class="modal-close" id="closeVCardModal" type="button">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

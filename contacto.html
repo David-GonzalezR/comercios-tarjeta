@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Contáctanos — BurgerStreet</title>
+<meta name="description" content="Envíanos tus sugerencias, quejas o pedidos especiales. En BurgerStreet queremos escucharte." />
+<meta name="theme-color" content="#0d0a06" />
+<link rel="manifest" href="./manifest.json" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="./index.html">← Volver</a>
+    <h1>💬 Contáctanos</h1>
+    <p class="lead">¿Tienes una sugerencia, queja o pedido especial? Escríbenos.</p>
+
+    <form id="contactForm" class="form-card" novalidate>
+      <label for="nombre">Tu nombre</label>
+      <input id="nombre" name="nombre" type="text" required placeholder="¿Cómo te llamas?" />
+
+      <label for="email">Correo electrónico</label>
+      <input id="email" name="email" type="email" required placeholder="tu@correo.com" />
+
+      <label for="telefono">Teléfono (opcional)</label>
+      <input id="telefono" name="telefono" type="tel" placeholder="+57 300 000 0000" />
+
+      <label for="tipo">Tipo de mensaje</label>
+      <select id="tipo" name="tipo">
+        <option value="sugerencia">💡 Sugerencia</option>
+        <option value="queja">😟 Queja / Reclamo</option>
+        <option value="pedido">🍔 Pedido especial</option>
+        <option value="otro">📩 Otro</option>
+      </select>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos todo..."></textarea>
+
+      <button type="submit">Enviar mensaje 🚀</button>
+    </form>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./script.js"></script>
+</body>
+</html>

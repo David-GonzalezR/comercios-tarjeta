@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Horarios — BurgerStreet</title>
+<meta name="description" content="Horarios de atención de BurgerStreet. Abiertos todos los días de 11am a 11pm." />
+<meta name="theme-color" content="#0d0a06" />
+<link rel="manifest" href="./manifest.json" />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .hours-card {
+    background: rgba(26, 18, 8, 0.65);
+    border: 1px solid rgba(255, 107, 26, 0.4);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    margin-bottom: 20px;
+  }
+  .hours-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(255,107,26,0.25), rgba(255,61,0,0.15));
+    border-bottom: 1px solid rgba(255,107,26,0.25);
+  }
+  .hours-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff8f0;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.15s;
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row:hover { background: rgba(255,107,26,0.06); }
+  .hours-row.today {
+    background: rgba(255,107,26,0.12);
+    border-left: 3px solid var(--neon);
+  }
+  .hours-day {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f0dfc0;
+  }
+  .hours-row.today .hours-day { color: var(--neon); }
+  .hours-time {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .badge-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(16,185,129,0.18);
+    color: #10b981;
+    border: 1px solid rgba(16,185,129,0.4);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .badge-open::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    animation: pulse-green 1.5s infinite;
+    display: inline-block;
+  }
+  @keyframes pulse-green {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.3); }
+  }
+  .info-box {
+    background: rgba(255,107,26,0.1);
+    border: 1px solid rgba(255,107,26,0.3);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    color: #e8d5b7;
+    line-height: 1.6;
+  }
+  .info-box strong { color: var(--neon); }
+</style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="./index.html">← Volver</a>
+    <h1>🕐 Horarios</h1>
+    <p class="lead">Siempre listos para servirte las mejores hamburguesas.</p>
+
+    <div id="statusBadge" class="badge-open">🟢 Abierto ahora</div>
+
+    <div class="hours-card">
+      <div class="hours-header">
+        <h2>📅 Horario semanal</h2>
+      </div>
+      <div class="hours-row" id="day-1"><span class="hours-day">Lunes</span><span class="hours-time">11:00 am – 10:00 pm</span></div>
+      <div class="hours-row" id="day-2"><span class="hours-day">Martes</span><span class="hours-time">11:00 am – 10:00 pm</span></div>
+      <div class="hours-row" id="day-3"><span class="hours-day">Miércoles</span><span class="hours-time">11:00 am – 10:00 pm</span></div>
+      <div class="hours-row" id="day-4"><span class="hours-day">Jueves</span><span class="hours-time">11:00 am – 10:00 pm</span></div>
+      <div class="hours-row" id="day-5"><span class="hours-day">Viernes</span><span class="hours-time">11:00 am – 11:00 pm</span></div>
+      <div class="hours-row" id="day-6"><span class="hours-day">Sábado</span><span class="hours-time">10:00 am – 11:00 pm</span></div>
+      <div class="hours-row" id="day-0"><span class="hours-day">Domingo</span><span class="hours-time">11:00 am – 10:00 pm</span></div>
+    </div>
+
+    <div class="info-box">
+      🚴 <strong>Domicilios disponibles</strong> hasta 30 min antes del cierre.<br>
+      📍 También puedes <strong>recoger en tienda</strong> sin esperas adicionales.<br>
+      📞 Pedidos al <strong>+57 300 123 4567</strong> o por WhatsApp.
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Highlight today's row
+    const today = new Date().getDay(); // 0=Sun, 1=Mon, ...
+    const row = document.getElementById('day-' + today);
+    if (row) row.classList.add('today');
+
+    // Open/closed badge
+    const hour = new Date().getHours();
+    const badge = document.getElementById('statusBadge');
+    const closedHours = { 0:22, 1:22, 2:22, 3:22, 4:23, 5:23, 6:22 };
+    const openHour = (today === 5) ? 10 : 11;
+    const closeHour = closedHours[today];
+    if (hour < openHour || hour >= closeHour) {
+      badge.style.background = 'rgba(239,68,68,0.15)';
+      badge.style.color = '#ef4444';
+      badge.style.borderColor = 'rgba(239,68,68,0.4)';
+      badge.innerHTML = '🔴 Cerrado ahora';
+      badge.style.setProperty('--dot-color', '#ef4444');
+    }
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+</html>
