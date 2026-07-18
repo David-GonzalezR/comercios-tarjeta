@@ -195,6 +195,13 @@ const PHONE = "3156349313";
     if (waBtn)   waBtn.href   = `https://wa.me/57${PHONE}?text=Hola%20BurgerStreet%2C%20quiero%20hacer%20un%20pedido%20%F0%9F%8D%94`;
     if (callBtn) callBtn.href = `tel:+57${PHONE}`;
 
+    // Inyectar número formateado en todos los elementos .phone-display y placeholders
+    const formatted = `+57 ${PHONE.slice(0,3)} ${PHONE.slice(3,6)} ${PHONE.slice(6)}`;
+    document.querySelectorAll(".phone-display").forEach(el => el.textContent = formatted);
+    document.querySelectorAll('input[name="telefono"]').forEach(el => {
+      if (el.placeholder) el.placeholder = formatted;
+    });
+
     const save  = document.getElementById("saveContact");
     const share = document.getElementById("shareCard");
     if (save)  save.addEventListener("click", downloadVCard);
